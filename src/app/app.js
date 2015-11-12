@@ -13,13 +13,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by vinhhoang on 08/11/2015.
  */
 var angular2_1 = require('angular2/angular2');
+var hero_form_component_1 = require('./hero-form.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: '<h1>My SECOND Angular 2 App</h1>'
+            template: "\n    <hero-form></hero-form>\n    ",
+            directives: [hero_form_component_1.HeroFormComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

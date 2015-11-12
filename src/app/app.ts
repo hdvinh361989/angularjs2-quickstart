@@ -2,12 +2,17 @@
  * Created by vinhhoang on 08/11/2015.
  */
 import {Component, bootstrap} from 'angular2/angular2';
+import {HeroFormComponent} from './hero-form.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My SECOND Angular 2 App</h1>'
+    template: `
+    <hero-form></hero-form>
+    `,
+    directives: [HeroFormComponent]
 })
 class AppComponent {
+
 }
 
 bootstrap(AppComponent);
