@@ -10,23 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by vinhhoang on 08/11/2015.
+ * Created by vinhhoang on 12/11/2015.
+ */
+/**
+ * Created by vinhhoang on 12/11/2015.
  */
 var angular2_1 = require('angular2/angular2');
-var power_booster_1 = require('./power-booster');
-var display_fetched_data_1 = require('./display-fetched-data');
-var AppComponent = (function () {
-    function AppComponent() {
+var fetch_json_pipe_1 = require('./fetch-json-pipe');
+var HeroListComponent = (function () {
+    function HeroListComponent() {
     }
-    AppComponent = __decorate([
+    HeroListComponent = __decorate([
         angular2_1.Component({
-            selector: 'my-app',
-            template: "\n    <power-booster></power-booster>\n\n    <display-fetched-data></display-fetched-data>\n    ",
-            directives: [power_booster_1.PowerBooster, display_fetched_data_1.HeroListComponent]
+            selector: 'display-fetched-data',
+            template: "\n    <h2>Display fetched data</h2>\n    <div *ng-for=\"#hero of ('heroes.json' | fetch) \">\n      {{hero.name}}\n    </div>\n\n    <p>Heroes as JSON:\n    {{'heroes.json' | fetch | json}}\n    </p>\n    ",
+            directives: [angular2_1.CORE_DIRECTIVES],
+            pipes: [fetch_json_pipe_1.FetchJsonPipe]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HeroListComponent);
+    return HeroListComponent;
 })();
-angular2_1.bootstrap(AppComponent);
-//# sourceMappingURL=app.js.map
+exports.HeroListComponent = HeroListComponent;
+//# sourceMappingURL=display-fetched-data.js.map

@@ -10,23 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by vinhhoang on 08/11/2015.
+ * Created by vinhhoang on 12/11/2015.
  */
 var angular2_1 = require('angular2/angular2');
-var power_booster_1 = require('./power-booster');
-var display_fetched_data_1 = require('./display-fetched-data');
-var AppComponent = (function () {
-    function AppComponent() {
+var exponential_strength_pipe_1 = require('./exponential-strength-pipe');
+var PowerBooster = (function () {
+    function PowerBooster() {
+        this.power = 5;
+        this.factor = 2;
     }
-    AppComponent = __decorate([
+    PowerBooster = __decorate([
         angular2_1.Component({
-            selector: 'my-app',
-            template: "\n    <power-booster></power-booster>\n\n    <display-fetched-data></display-fetched-data>\n    ",
-            directives: [power_booster_1.PowerBooster, display_fetched_data_1.HeroListComponent]
+            selector: 'power-booster',
+            template: "\n    <h2>Power Booster</h2>\n    <div>\n        Normal power: <input [(ng-model)]=\"power\">\n    </div>\n    <div>\n        Boost factor: <input [(ng-model)]=\"factor\">\n    </div>\n    <p>\n        Super power boost: {{power | exponentialStrength: factor}}\n    </p>\n    ",
+            pipes: [exponential_strength_pipe_1.ExponentialStrengthPipe],
+            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PowerBooster);
+    return PowerBooster;
 })();
-angular2_1.bootstrap(AppComponent);
-//# sourceMappingURL=app.js.map
+exports.PowerBooster = PowerBooster;
+//# sourceMappingURL=power-booster.js.map
