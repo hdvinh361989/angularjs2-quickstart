@@ -17,11 +17,14 @@ import {ExponentialStrengthPipe} from './exponential-strength-pipe';
     <p>
         Super power boost: {{power | exponentialStrength: factor}}
     </p>
+    <p>
+        {{test}}
+    </p>
     `,
     pipes: [ExponentialStrengthPipe],
     directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
-export class PowerBooster{
+export class PowerBooster {
     power = 5;
     factor = 2;
 }

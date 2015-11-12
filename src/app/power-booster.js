@@ -22,7 +22,7 @@ var PowerBooster = (function () {
     PowerBooster = __decorate([
         angular2_1.Component({
             selector: 'power-booster',
-            template: "\n    <h2>Power Booster</h2>\n    <div>\n        Normal power: <input [(ng-model)]=\"power\">\n    </div>\n    <div>\n        Boost factor: <input [(ng-model)]=\"factor\">\n    </div>\n    <p>\n        Super power boost: {{power | exponentialStrength: factor}}\n    </p>\n    ",
+            template: "\n    <h2>Power Booster</h2>\n    <div>\n        Normal power: <input [(ng-model)]=\"power\">\n    </div>\n    <div>\n        Boost factor: <input [(ng-model)]=\"factor\">\n    </div>\n    <p>\n        Super power boost: {{power | exponentialStrength: factor}}\n    </p>\n    <p>\n        {{test}}\n    </p>\n    ",
             pipes: [exponential_strength_pipe_1.ExponentialStrengthPipe],
             directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
